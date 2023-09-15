@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA 3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/logouni.png">
+</head>
+<body>
+    <h1>CODIGOS DA LISTA 3 DE PROGRAMAÇÃO</h1>
+    <div>
+      <pre>
+<code>
+1) A estrutura switch case não é a escolha mais apropriada para determinar o maior e o menor número entre três valores inteiros, pois ela não é adequada para comparações complexas
+#include <iostream>
+  using namespace std;
+  
+  int main() {
+      int num1, num2, num3;
+  
+      cout << "Digite o primeiro número inteiro: ";
+      cin >> num1;
+      cout << "Digite o segundo número inteiro: ";
+      cin >> num2;
+      cout << "Digite o terceiro número inteiro: ";
+      cin >> num3;
+  
+      int maior, menor;
+      
+      switch (num1) {
+          case 1:
+              maior = num1;
+              menor = num1;
+              break;
+          case 2:
+              maior = num1;
+              menor = num1;
+              break;
+          case 3:
+              maior = num1;
+              menor = num1;
+              break;
+      }
+  
+      switch (num2) {
+          case 1:
+              if (num2 > maior)
+                  maior = num2;
+              if (num2 < menor)
+                  menor = num2;
+              break;
+          case 2:
+              if (num2 > maior)
+                  maior = num2;
+              if (num2 < menor)
+                  menor = num2;
+              break;
+          case 3:
+              if (num2 > maior)
+                  maior = num2;
+              if (num2 < menor)
+                  menor = num2;
+              break;
+      }
+  
+      switch (num3) {
+          case 1:
+              if (num3 > maior)
+                  maior = num3;
+              if (num3 < menor)
+                  menor = num3;
+              break;
+          case 2:
+              if (num3 > maior)
+                  maior = num3;
+              if (num3 < menor)
+                  menor = num3;
+              break;
+          case 3:
+              if (num3 > maior)
+                  maior = num3;
+              if (num3 < menor)
+                  menor = num3;
+              break;
+      }
+  
+      cout << "Maior número: " << maior << endl;
+      cout << "Menor número: " << menor << endl;
+  
+      return 0;
+  }
+</code>
+</pre>
+<pre>
+  <code>
+    2)O valor inserido deve estar dentro do intervalo valid (de 1 a 12) para evitar erros.
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          int numeroMes;
+      
+          cout << "Digite um número inteiro de 1 a 12: ";
+          cin >> numeroMes;
+      
+          switch (numeroMes) {
+              case 1:
+                  cout << "Janeiro" << endl;
+                  break;
+              case 2:
+                  cout << "Fevereiro" << endl;
+                  break;
+              case 3:
+                  cout << "Março" << endl;
+                  break;
+              case 4:
+                  cout << "Abril" << endl;
+                  break;
+              case 5:
+                  cout << "Maio" << endl;
+                  break;
+              case 6:
+                  cout << "Junho" << endl;
+                  break;
+              case 7:
+                  cout << "Julho" << endl;
+                  break;
+              case 8:
+                  cout << "Agosto" << endl;
+                  break;
+              case 9:
+                  cout << "Setembro" << endl;
+                  break;
+              case 10:
+                  cout << "Outubro" << endl;
+                  break;
+              case 11:
+                  cout << "Novembro" << endl;
+                  break;
+              case 12:
+                  cout << "Dezembro" << endl;
+                  break;
+              default:
+                  cout << "Número inválido! O número deve estar entre 1 e 12." << endl;
+          }
+      
+          return 0;
+      }
+    </code>
+  </pre>
+<pre>
+  <code>
+    3)cargo válido (de 1 a 4) para evitar erros. O programa também usa setprecision(2) para formatar a saída com duas casas decimais.
+    #include <iostream>
+      #include <iomanip>
+      using namespace std;
+      
+      int main() {
+          int codigoCargo;
+          double salarioAtual, aumento, novoSalario;
+      
+          cout << "Digite o código do cargo (1 a 4): ";
+          cin >> codigoCargo;
+      
+          cout << "Digite o salário atual do funcionário: R$ ";
+          cin >> salarioAtual;
+      
+          switch (codigoCargo) {
+              case 1:
+                  aumento = salarioAtual * 0.40;
+                  break;
+              case 2:
+                  aumento = salarioAtual * 0.35;
+                  break;
+              case 3:
+                  aumento = salarioAtual * 0.20;
+                  break;
+              case 4:
+                  aumento = salarioAtual * 0.10;
+                  break;
+              default:
+                  cout << "Código de cargo inválido!" << endl;
+                  return 1;
+          }
+      
+          novoSalario = salarioAtual + aumento;
+      
+          cout << fixed << setprecision(2);
+          cout << "Aumento: R$ " << aumento << endl;
+          cout << "Novo salário: R$ " << novoSalario << endl;
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    4)para usar o switch case para este exercício teria que mapear uma faixa de medias para cada caso, o que não é prático.
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double nota1, nota2, nota3, nota4;
+          double media;
+      
+          cout << "Digite a primeira nota: ";
+          cin >> nota1;
+          cout << "Digite a segunda nota: ";
+          cin >> nota2;
+          cout << "Digite a terceira nota: ";
+          cin >> nota3;
+          cout << "Digite a quarta nota: ";
+          cin >> nota4;
+      
+          media = (nota1 + nota2 + nota3 + nota4) / 4;
+      
+          if (media >= 7.0) {
+              cout << "Aprovado" << endl;
+          } else if (media >= 5.0) {
+              cout << "Em recuperação" << endl;
+          } else {
+              cout << "Reprovado" << endl;
+          }
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    5)
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double lado1, lado2, lado3;
+      
+          cout << "Digite o primeiro lado do triângulo: ";
+          cin >> lado1;
+          cout << "Digite o segundo lado do triângulo: ";
+          cin >> lado2;
+          cout << "Digite o terceiro lado do triângulo: ";
+          cin >> lado3;
+      
+          int tipoTriangulo;
+      
+          if (lado1 == lado2 && lado2 == lado3) {
+              tipoTriangulo = 1; // Equilátero
+          } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+              tipoTriangulo = 2; // Isósceles
+          } else {
+              tipoTriangulo = 3; // Escaleno
+          }
+      
+          switch (tipoTriangulo) {
+              case 1:
+                  cout << "Triângulo equilátero" << endl;
+                  break;
+              case 2:
+                  cout << "Triângulo isósceles" << endl;
+                  break;
+              case 3:
+                  cout << "Triângulo escaleno" << endl;
+                  break;
+              default:
+                  cout << "Medidas inválidas para um triângulo." << endl;
+          }
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    6)O uso de switch case não é apropriado para ordenação
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double num1, num2, num3;
+      
+          cout << "Digite o primeiro número positivo: ";
+          cin >> num1;
+          cout << "Digite o segundo número positivo: ";
+          cin >> num2;
+          cout << "Digite o terceiro número positivo: ";
+          cin >> num3;
+      
+          if (num1 <= num2 && num1 <= num3) {
+              cout << num1 << " ";
+              if (num2 <= num3) {
+                  cout << num2 << " " << num3 << endl;
+              } else {
+                  cout << num3 << " " << num2 << endl;
+              }
+          } else if (num2 <= num1 && num2 <= num3) {
+              cout << num2 << " ";
+              if (num1 <= num3) {
+                  cout << num1 << " " << num3 << endl;
+              } else {
+                  cout << num3 << " " << num1 << endl;
+              }
+          } else {
+              cout << num3 << " ";
+              if (num1 <= num2) {
+                  cout << num1 << " " << num2 << endl;
+              } else {
+                  cout << num2 << " " << num1 << endl;
+              }
+          }
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    7)Verifique se os valores inseridos sao validos
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double temperatura;
+      
+          cout << "Digite a temperatura do alimento em graus Celsius: ";
+          cin >> temperatura;
+      
+          int status;
+      
+          if (temperatura < 35) {
+              status = 1; // Não há risco de queimadura
+          } else if (temperatura >= 35 && temperatura <= 40) {
+              status = 2; // Manusear com cuidado
+          } else {
+              status = 3; // Usar luvas
+          }
+      
+          switch (status) {
+              case 1:
+                  cout << "Não há risco de queimadura." << endl;
+                  break;
+              case 2:
+                  cout << "Manuseie o alimento com cuidado." << endl;
+                  break;
+              case 3:
+                  cout << "Use luvas para manusear o alimento." << endl;
+                  break;
+              default:
+                  cout << "Temperatura fora da faixa válida." << endl;
+          }
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    8)usuário insere o peso, altura e sexo, e o programa calcula o IMC 
+    #include <iostream>
+      #include <cmath>
+      using namespace std;
+      
+      int main() {
+          double peso, altura, imc;
+          char sexo;
+      
+          cout << "Digite o peso em quilogramas: ";
+          cin >> peso;
+          cout << "Digite a altura em metros: ";
+          cin >> altura;
+          cout << "Digite o sexo (M para masculino, F para feminino): ";
+          cin >> sexo;
+      
+          imc = peso / pow(altura, 2);
+      
+          int situacao;
+      
+          if (sexo == 'F') {
+              if (imc < 19.1) {
+                  situacao = 1; // Abaixo do peso
+              } else if (imc >= 19.1 && imc <= 25.8) {
+                  situacao = 2; // No peso normal
+              } else if (imc >= 25.8 && imc <= 27.3) {
+                  situacao = 3; // Marginalmente acima do peso
+              } else if (imc >= 27.3 && imc <= 32.3) {
+                  situacao = 4; // Acima do peso ideal
+              } else {
+                  situacao = 5; // Obeso
+              }
+          } else if (sexo == 'M') {
+              if (imc < 20.7) {
+                  situacao = 1; // Abaixo do peso
+              } else if (imc >= 20.7 && imc <= 26.4) {
+                  situacao = 2; // No peso normal
+              } else if (imc >= 26.4 && imc <= 27.8) {
+                  situacao = 3; // Marginalmente acima do peso
+              } else if (imc >= 27.8 && imc <= 31.1) {
+                  situacao = 4; // Acima do peso ideal
+              } else {
+                  situacao = 5; // Obeso
+              }
+          } else {
+              cout << "Sexo inválido. Use M para masculino ou F para feminino." << endl;
+              return 1;
+          }
+      
+          switch (situacao) {
+              case 1:
+                  cout << "Abaixo do peso" << endl;
+                  break;
+              case 2:
+                  cout << "No peso normal" << endl;
+                  break;
+              case 3:
+                  cout << "Marginalmente acima do peso" << endl;
+                  break;
+              case 4:
+                  cout << "Acima do peso ideal" << endl;
+                  break;
+              case 5:
+                  cout << "Obeso" << endl;
+                  break;
+              default:
+                  cout << "Situação inválida." << endl;
+          }
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    9)alário do cliente, o valor do item e o número de parcelas desejado,calcula o valor da parcela e verifica se o pagamento.
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double salario, valorItem;
+          int numParcelas;
+      
+          cout << "Digite o salário do cliente: R$ ";
+          cin >> salario;
+          cout << "Digite o valor do item: R$ ";
+          cin >> valorItem;
+          cout << "Digite o número de parcelas desejado: ";
+          cin >> numParcelas;
+      
+          double valorParcela = valorItem / numParcelas;
+      
+          bool autorizado = true;
+          string motivo;
+      
+          if (numParcelas > 12) {
+              autorizado = false;
+              motivo = "Número de parcelas superior a 12.";
+          } else {
+              double valorParcelaComJuros = valorParcela * 1.05; // Valor da parcela com juros de 5%
+              if (valorParcelaComJuros > (salario * 0.3)) {
+                  autorizado = false;
+                  motivo = "Valor da parcela superior a 30% do salário.";
+              }
+          }
+      
+          switch (autorizado) {
+              case true:
+                  cout << "Pagamento autorizado." << endl;
+                  break;
+              case false:
+                  cout << "Pagamento não autorizado. Motivo: " << motivo << endl;
+                  break;
+          }
+      
+          return 0;
+      }
+      
+    </code>
+</pre>
+<pre>
+  <code>
+    10)Usando if para calcular o valor da conta de energia:
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double consumoKWh;
+          char bandeira;
+      
+          cout << "Digite o consumo em KW/h: ";
+          cin >> consumoKWh;
+          cout << "Digite a bandeira (V para verde, A para amarela, R para vermelha): ";
+          cin >> bandeira;
+      
+          double custo = consumoKWh * 2.0;
+      
+          if (bandeira == 'R') {
+              custo += custo * 0.055; // Acréscimo de 5,5% para bandeira vermelha
+          } else if (bandeira == 'A') {
+              custo += custo * 0.025; // Acréscimo de 2,5% para bandeira amarela
+          }
+      
+          cout << "Valor total da fatura: R$ " << custo << endl;
+      
+          return 0;
+      }
+    </code>
+</pre>
+<pre>
+  <code>
+    10)Usando swhite case 
+    #include <iostream>
+      using namespace std;
+      
+      int main() {
+          double consumoKWh;
+          char bandeira;
+      
+          cout << "Digite o consumo em KW/h: ";
+          cin >> consumoKWh;
+          cout << "Digite a bandeira (V para verde, A para amarela, R para vermelha): ";
+          cin >> bandeira;
+      
+          double custo = consumoKWh * 2.0;
+      
+          switch (bandeira) {
+              case 'R':
+                  custo += custo * 0.055; // Acréscimo de 5,5% para bandeira vermelha
+                  break;
+              case 'A':
+                  custo += custo * 0.025; // Acréscimo de 2,5% para bandeira amarela
+                  break;
+              case 'V':
+                  // Não há acréscimo para bandeira verde
+                  break;
+              default:
+                  cout << "Bandeira inválida." << endl;
+                  return 1;
+          }
+      
+          cout << "Valor total da fatura: R$ " << custo << endl;
+      
+          return 0;
+      }
+
+      OBS:Ambos os programas permitem que o usuário insira o consumo em KW/h e a bandeira (V, A ou R) e, em seguida, calculam o valor total.
+    </code>
+    </pre>
+</div>
+</body>
+</html>

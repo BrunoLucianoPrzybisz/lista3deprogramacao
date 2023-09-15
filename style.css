@@ -1,0 +1,14 @@
+pre {
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+h1 {
+    text-align: center;
+    text-decoration:underline;
+    font-style:italic ;
+    color:#ca2a2a;
+}
